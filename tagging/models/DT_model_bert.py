@@ -130,6 +130,7 @@ class BertForClassification(Model):
             loss = self._loss(logits, label.long().view(-1))
             output_dict["loss"] = loss
             self._accuracy(logits, label)
+            self._f1score(logits, label)
 
         return output_dict
 
@@ -157,5 +158,5 @@ class BertForClassification(Model):
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
         # ****** add by jlk ******
         metrics = {"accuracy": self._accuracy.get_metric(reset), 
-                   "f1score": self._f1score.get_metric(reset=reset)[2]}
+                   "f1score": self._f1score.get_metric(reset)[2]}
         return metrics
