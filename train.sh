@@ -1,4 +1,4 @@
 allennlp train -f \
     --include-package tagging \
-    -s /tmp/tagging/DT_output_dirs/sgd_baseline \
-    configs/sgd_baseline.jsonnet
+    -s /tmp/tagging/DT_output_dirs/test \
+    configs/bert_for_DT_classification.jsonnet
