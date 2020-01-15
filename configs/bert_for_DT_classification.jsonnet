@@ -29,28 +29,28 @@ local bert_model = "bert-base-uncased";
             }
         }
     },
-    "train_data_path": "data/train_v.csv",
+    "train_data_path": "data/train_t.csv",
     "validation_data_path": "data/train_v.csv",
     "model": {
-        "type": "bert_for_classification",
+        "type": "DT_model_bert",
         "bert_model": bert_model,
-        "dropout": 0.1,
+        "dropout": 0.2,
         "num_labels": 2,
         "trainable": false,
     },
     "iterator": {
         "type": "bucket",
         "sorting_keys": [["tokens", "num_tokens"]],
-        "batch_size": 5
+        "batch_size": 16
     },
     "trainer": {
         "optimizer": {
             "type": "adam",
             "lr": 0.001
         },
-        "validation_metric": "+accuracy",
+        "validation_metric": "+f1score",
         "num_serialized_models_to_keep": 1,
-        "num_epochs": 3,
+        "num_epochs": 30,
         "grad_norm": 10.0,
         "patience": 5,
         "cuda_device": -1
