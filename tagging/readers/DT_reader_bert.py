@@ -42,6 +42,10 @@ class DTDatasetReader(DatasetReader):
                     keyword = ['null']
                 if len(location) == 0:
                     location = ['null']
+                for each_ele in keyword:
+                    text.append(each_ele)
+                for each_ele in location:
+                    text.append(each_ele)
                 yield self.text_to_instance(data_id = data_id, 
                                             text = text, 
                                             keyword = keyword, 
@@ -67,7 +71,7 @@ class DTDatasetReader(DatasetReader):
         # fields["keyword"] = keyword_field
         # fields["location"] = location_field
         fields["label"] = LabelField(label)
-        # fields["data_id"] = data_id_field
+        fields["data_id"] = data_id_field
 
         return Instance(fields)
 

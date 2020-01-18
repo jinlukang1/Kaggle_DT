@@ -89,7 +89,7 @@ class BertForClassification(Model):
         initializer(self._classification_layer)
 
     def forward(  # type: ignore
-        self, tokens: Dict[str, torch.LongTensor], label: torch.IntTensor = None
+        self, data_id: Dict[str, torch.LongTensor], tokens: Dict[str, torch.LongTensor], label: torch.IntTensor = None
     ) -> Dict[str, torch.Tensor]:
 
         """
