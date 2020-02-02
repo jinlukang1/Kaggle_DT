@@ -10,7 +10,7 @@
       "token_embedders": {
         "tokens": {
           "type": "embedding",
-          "pretrained_file": "/Users/jinlukang/Downloads/glove.6B/glove.6B.100d.txt",
+          "pretrained_file": "(http://nlp.stanford.edu/data/glove.6B.zip)#glove.6B.50d.txt",
           "embedding_dim": 100,
           "trainable": false
         }
