@@ -4,4 +4,4 @@ allennlp predict \
   --predictor DT_predictor \
   --use-dataset-reader \
   --silent \
-  /tmp/tagging/DT_output_dirs/submit data/test.csv
+  /data1/tagging/DT_output_dirs/submit data/test.csv
