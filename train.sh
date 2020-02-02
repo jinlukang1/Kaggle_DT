@@ -1,4 +1,4 @@
 allennlp train -f \
     --include-package tagging \
-    -s /data1/tagging/DT_output_dirs/baseline \
+    -s /data1/jinlukang/DT_output/baseline \
     configs/baseline.jsonnet
